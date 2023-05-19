@@ -1,17 +1,43 @@
 import { Link } from "react-router-dom";
 import logo from '../../public/playday.png';
+import { useContext } from "react";
+import { AuthContext } from "../Routes/AuthProvider";
+import toast, { Toaster } from 'react-hot-toast';
+import { RiUser3Fill } from 'react-icons/ri';
 
-const Navbar = () => {
+const Header = () => {
 
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => toast.success('Logged Out!'))
+            .catch(() => toast.error("Something Went Wrong!"))
+    }
 
     const navItems = <>
         <li><Link className="hover:bg-red-500 hover:text-white hover:text-3xl" to='/'>Home</Link></li>
         <li><Link className="hover:bg-red-500 hover:text-white hover:text-3xl" to='/blogs'>Blogs</Link></li>
-        <li><Link className="hover:bg-red-500 hover:text-white hover:text-3xl" to='/login'>Login</Link></li>
+        {
+            user?.email ?
+                <>
+                    <li><Link className="hover:bg-red-500 hover:text-white hover:text-3xl" to='/login'>Add A Toy</Link></li>
+                    <li><Link className="hover:bg-red-500 hover:text-white hover:text-3xl" to='/login'>My Toys</Link></li>
+                    <div className="flex items-center lg:ml-24">
+                        <div className="tooltip tooltip-bottom" data-tip={user?.email}>
+                            <RiUser3Fill style={{ fontSize: '3rem' }} />
+                        </div>
+                        <li><Link className="hover:bg-red-500 hover:text-white" onClick={handleLogOut}>Log Out</Link></li>
+                    </div>
+                </>
+                :
+                <li><Link className="hover:bg-red-500 hover:text-white hover:text-3xl" to='/login'>Login</Link></li>
+        }
     </>
 
     return (
         <div className="navbar h-28 mb-4">
+            <Toaster />
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -37,4 +63,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Header;
