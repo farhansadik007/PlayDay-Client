@@ -1,8 +1,37 @@
 import 'react-tabs/style/react-tabs.css';
 import { Toaster } from 'react-hot-toast';
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import { useEffect, useState } from 'react';
+import ToyCard from './ToyCard';
+
 
 const Home = () => {
+    const [toys, setToys] = useState([]);
+    const [tempToy, setTempToy] = useState([]);
+
+
+    useEffect(() => {
+        fetch('http://localhost:5000/toys')
+            .then(res => res.json())
+            .then(data => setToys(data))
+    }, [])
+
+    const rc = e => {
+        const t = toys.filter(rc => rc.subcategory === e.target.value);
+        setTempToy(t);
+    }
+
+    const pc = e => {
+        const t = toys.filter(rc => rc.subcategory === e.target.value);
+        setTempToy(t);
+    }
+
+    const cc = e => {
+        const t = toys.filter(rc => rc.subcategory === e.target.value);
+        setTempToy(t);
+    }
+
+
     return (
         <div>
             <Toaster />
@@ -47,20 +76,46 @@ const Home = () => {
 
             <div>
                 <h1 className="text-center mt-36 text-5xl max-md:text-4xl font-bold">SHOP BY CATEGORY</h1>
+                <p className='text-center mt-12 max-md:text-4xl font-bold' >Press Tab to see!</p>
                 <Tabs className='text-center w-2/3 mx-auto mt-24'>
                     <TabList>
-                        <Tab><button>Sports Car Toy</button></Tab>
-                        <Tab><button>Police Car Toy</button></Tab>
-                        <Tab><button>Heavy Car Toy</button></Tab>
+                        <Tab><button onClick={rc} value="Racing Cars">Racing Car Toy</button></Tab>
+                        <Tab><button onClick={pc} value="Police Cars">Police Car Toy</button></Tab>
+                        <Tab><button onClick={cc} value="Construction Cars">Construction Car Toy</button></Tab>
                     </TabList>
 
                     <TabPanel>
+                        <div className='grid grid-cols-3 gap-4'>
+                            {
+                                tempToy.map(t => <ToyCard
+                                    key={t._id}
+                                    t={t}
+                                    ></ToyCard>
+                                    )
+                                }
+                        </div>
                     </TabPanel>
                     <TabPanel>
-                        <h2>Any content 2</h2>
+                        <div className='grid grid-cols-3 gap-4'>
+                            {
+                                tempToy.map(t => <ToyCard
+                                    key={t._id}
+                                    t={t}
+                                    ></ToyCard>
+                                    )
+                                }
+                        </div>
                     </TabPanel>
                     <TabPanel>
-                        <h2>Any content 2</h2>
+                        <div className='grid grid-cols-3 gap-4'>
+                            {
+                                tempToy.map(t => <ToyCard
+                                    key={t._id}
+                                    t={t}
+                                ></ToyCard>
+                                )
+                            }
+                        </div>
                     </TabPanel>
                 </Tabs>
             </div>
