@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <Toaster />
-            
+
             {/* banner  */}
 
             <div className="flex max-md:flex-col justify-evenly items-center mt-36">
