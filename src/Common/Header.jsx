@@ -22,7 +22,7 @@ const Header = () => {
             user?.email ?
                 <>
                     <li><Link className="hover:bg-red-500 hover:text-white hover:text-3xl" to='/addtoy'>Add A Toy</Link></li>
-                    <li><Link className="hover:bg-red-500 hover:text-white hover:text-3xl" to='/login'>My Toys</Link></li>
+                    <li><Link className="hover:bg-red-500 hover:text-white hover:text-3xl" to='/mytoys'>My Toys</Link></li>
                     <div className="flex items-center lg:ml-24">
                         <div className="tooltip tooltip-bottom" data-tip={user?.email}>
                             <RiUser3Fill style={{ fontSize: '3rem' }} />
