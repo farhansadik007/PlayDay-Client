@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router-dom";
 const ToyCardDetails = () => {
     const toyDetails = useLoaderData();
     const { picture, name, seller_name, seller_email, price, rating, quantity, description } = toyDetails;
-    console.log(toyDetails);
     return (
         <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row">
