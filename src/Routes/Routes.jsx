@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         {
             path: '/toy/:id',
             element:<PrivateRoute><ToyCardDetails></ToyCardDetails></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+            loader: ({params}) => fetch(`https://playday-server-farhansadik007.vercel.app/toy/${params.id}`)
         },
         {
             path: '/mytoys',
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
         {
             path: '/edit/:id',
             element: <PrivateRoute><EditToys></EditToys></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+            loader: ({params}) => fetch(`https://playday-server-farhansadik007.vercel.app/toy/${params.id}`)
         }
       ]
     },

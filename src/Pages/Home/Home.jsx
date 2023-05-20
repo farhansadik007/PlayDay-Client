@@ -14,7 +14,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys')
+        fetch('https://playday-server-farhansadik007.vercel.app/toys')
             .then(res => res.json())
             .then(data => {
                 const filter = data.filter(rc => rc.subcategory === 'Racing Cars')
@@ -47,7 +47,7 @@ const Home = () => {
 
             <div className="flex max-md:flex-col justify-evenly items-center mt-36">
                 <h1 className="animate bg-gradient-to-r from-red-500 to-yellow-400 bg-clip-text text-transparent text-7xl max-md:text-5xl font-black leading-relaxed">PLAY ALL DAY <br /> With <br /> AMAZING TOYS</h1>
-                <img className="w-1/3" src="/src/playday.png" alt="" />
+                <img className="w-1/3" src="playday.png" alt="" />
             </div>
 
             {/* car showcase  */}

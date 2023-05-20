@@ -15,7 +15,7 @@ const EditToys = () => {
         const description = form.description.value;
 
 
-        fetch(`http://localhost:5000/toy/${toyId._id}`, {
+        fetch(`https://playday-server-farhansadik007.vercel.app/toy/${toyId._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

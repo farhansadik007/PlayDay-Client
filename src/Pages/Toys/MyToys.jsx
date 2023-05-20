@@ -8,7 +8,7 @@ const MyToys = () => {
     const [myToys, setMyToys] = useState([]);
     useTitle('PlayDay | My Toys')
 
-    const url = `http://localhost:5000/mytoys?email=${user.email}`;
+    const url = `https://playday-server-farhansadik007.vercel.app/mytoys?email=${user.email}`;
 
     useEffect(() => {
         fetch(url)
@@ -20,7 +20,7 @@ const MyToys = () => {
     const handleDelete = id => {
         const proceed = confirm('Are you Sure you want to delete?');
         if (proceed) {
-            fetch(`http://localhost:5000/toys/${id}`, {
+            fetch(`https://playday-server-farhansadik007.vercel.app/toys/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

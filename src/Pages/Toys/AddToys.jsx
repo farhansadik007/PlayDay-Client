@@ -33,7 +33,7 @@ const AddToys = () => {
             description: description
         }
 
-        fetch('http://localhost:5000/addtoys', {
+        fetch('https://playday-server-farhansadik007.vercel.app/addtoys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
