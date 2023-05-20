@@ -3,12 +3,14 @@ import { Toaster } from 'react-hot-toast';
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import { useEffect, useState } from 'react';
 import ToyCard from './ToyCard';
+import useTitle from '../../Common/useTitle';
 
 
 
 const Home = () => {
     const [toys, setToys] = useState([]);
     const [tempToy, setTempToy] = useState([]);
+    useTitle('PlayDay | Home');
 
 
     useEffect(() => {

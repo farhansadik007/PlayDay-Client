@@ -3,12 +3,14 @@ import img from '/src/playday.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../Routes/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import useTitle from '../../Common/useTitle';
 
 const Login = () => {
 
     const { signIn, googleSignIn } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
+    useTitle('PlayDay | Login');
 
     const from = location.state?.from?.pathname || '/';
 

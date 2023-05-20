@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import ToyCard from "./ToyCard";
+import useTitle from "../../Common/useTitle";
 
 const Toys = () => {
     const [toys, setToys] = useState([]);
+    useTitle('PlayDay | All Toys');
 
     useEffect(() => {
         fetch('http://localhost:5000/toys')

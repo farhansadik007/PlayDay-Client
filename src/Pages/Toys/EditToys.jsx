@@ -1,8 +1,10 @@
 import toast from 'react-hot-toast';
 import { useLoaderData } from "react-router-dom";
+import useTitle from '../../Common/useTitle';
 
 const EditToys = () => {
     const toyId = useLoaderData();
+    useTitle('PlayDay | Edit')
 
     const handleEdit = (e) => {
         e.preventDefault();

@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Routes/AuthProvider";
 import toast from 'react-hot-toast';
+import useTitle from "../../Common/useTitle";
 
 const AddToys = () => {
     const { user } = useContext(AuthContext);
+    useTitle('PlayDay | Add A Toy')
 
     const handleAddToy = e => {
         e.preventDefault();

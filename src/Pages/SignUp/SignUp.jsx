@@ -3,10 +3,12 @@ import img from '/src/playday.png'
 import { useContext } from "react";
 import { AuthContext } from "../../Routes/AuthProvider";
 import toast, { Toaster } from 'react-hot-toast';
+import useTitle from "../../Common/useTitle";
 
 const SignUp = () => {
 
     const { createUser, googleSignIn } = useContext(AuthContext);
+    useTitle('PlayDay | Register');
 
     const handleSignUp = e => {
         e.preventDefault();
