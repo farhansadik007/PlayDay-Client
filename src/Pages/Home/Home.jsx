@@ -94,9 +94,9 @@ const Home = () => {
                                 tempToy.map(t => <ToyCard
                                     key={t._id}
                                     t={t}
-                                    ></ToyCard>
-                                    )
-                                }
+                                ></ToyCard>
+                                )
+                            }
                         </div>
                     </TabPanel>
                     <TabPanel>
@@ -105,9 +105,9 @@ const Home = () => {
                                 tempToy.map(t => <ToyCard
                                     key={t._id}
                                     t={t}
-                                    ></ToyCard>
-                                    )
-                                }
+                                ></ToyCard>
+                                )
+                            }
                         </div>
                     </TabPanel>
                     <TabPanel>
@@ -122,6 +122,27 @@ const Home = () => {
                         </div>
                     </TabPanel>
                 </Tabs>
+            </div>
+
+
+            {/* facts  */}
+            <div className='my-24 text-center'>
+                <h1 className='text-5xl my-12'>!!!FACTS!!!</h1>
+                <p className='my-24 text-2xl'>There Are More <span className='text-4xl text-red-500'> Cars Than People </span> In The World</p>
+                <p className='my-24 text-2xl'>The most expensive toy in the world is the Astolat Dollhouse Castle is costs an astounding <span className='text-4xl text-blue-500'>$8.5 million</span></p>
+                <p className='my-24 text-2xl'>
+                    The word toy comes from the old English word for <span className='text-4xl text-green-500'> “Tool”</span></p>
+            </div>
+
+            {/* toy meme  */}
+
+            <div className='my-24 text-center'>
+                <h1 className='text-5xl my-24 mt-72'>Top 3 Toy Manufacturing Companies</h1>
+                <ul className='lg:flex justify-evenly'>
+                    <li className='my-24 text-7xl font-bold text-red-500'>Bandai Namco</li>
+                    <li className='my-24 text-7xl font-bold text-blue-500'>Yikang Plush Toys</li>
+                    <li className='my-24 text-7xl font-bold text-green-500'>Lego</li>
+                </ul>
             </div>
         </div>
     );
