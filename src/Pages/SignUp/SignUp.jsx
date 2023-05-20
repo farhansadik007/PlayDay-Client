@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import img from '../../../public/playday.png'
+import img from '/src/playday.png'
 import { useContext } from "react";
 import { AuthContext } from "../../Routes/AuthProvider";
 import toast, { Toaster } from 'react-hot-toast';

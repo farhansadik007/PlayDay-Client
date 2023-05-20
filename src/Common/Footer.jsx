@@ -1,4 +1,4 @@
-import logo from '../../public/playday.png';
+import logo from '/src/playday.png';
 
 const Footer = () => {
     return (
@@ -6,10 +6,10 @@ const Footer = () => {
         <footer className="footer px-10 text-base-content">
             <div className='sm:flex sm:items-center'>
                 <img className='w-72' src={logo} alt="" />
-                <p className='text-xl'>
-                    <h1 className='text-3xl text-red-500'>PlayDay</h1>
+                <div className='text-xl'>
+                    <div className='text-3xl text-red-500'>PlayDay</div>
                     <br />
-                    Day for you to play !</p>
+                    Day for you to play !</div>
             </div>
             <div className='lg:mt-24 md:mt-24 sm:mx-auto text-lg'>
                 <span className="footer-title text-red-600">Play Day</span>

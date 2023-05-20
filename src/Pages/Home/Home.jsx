@@ -1,6 +1,6 @@
-import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
 import { Toaster } from 'react-hot-toast';
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
 const Home = () => {
     return (
@@ -11,7 +11,7 @@ const Home = () => {
 
             <div className="flex max-md:flex-col justify-evenly items-center mt-36">
                 <h1 className="animate bg-gradient-to-r from-red-500 to-yellow-400 bg-clip-text text-transparent text-7xl max-md:text-5xl font-black leading-relaxed">PLAY ALL DAY <br /> With <br /> AMAZING TOYS</h1>
-                <img className="w-1/3" src="../../../public/playday.png" alt="" />
+                <img className="w-1/3" src="/src/playday.png" alt="" />
             </div>
 
             {/* car showcase  */}
@@ -49,13 +49,12 @@ const Home = () => {
                 <h1 className="text-center mt-36 text-5xl max-md:text-4xl font-bold">SHOP BY CATEGORY</h1>
                 <Tabs className='text-center w-2/3 mx-auto mt-24'>
                     <TabList>
-                        <Tab>Sports Car Toy</Tab>
-                        <Tab>Police Car Toy</Tab>
-                        <Tab>Heavy Car Toy</Tab>
+                        <Tab><button>Sports Car Toy</button></Tab>
+                        <Tab><button>Police Car Toy</button></Tab>
+                        <Tab><button>Heavy Car Toy</button></Tab>
                     </TabList>
 
                     <TabPanel>
-                        <h2>Any content 1</h2>
                     </TabPanel>
                     <TabPanel>
                         <h2>Any content 2</h2>

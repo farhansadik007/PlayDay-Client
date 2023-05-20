@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from '../../public/playday.png';
+import logo from '/src/playday.png';
 import { useContext } from "react";
 import { AuthContext } from "../Routes/AuthProvider";
 import toast, { Toaster } from 'react-hot-toast';
@@ -21,7 +21,7 @@ const Header = () => {
         {
             user?.email ?
                 <>
-                    <li><Link className="hover:bg-red-500 hover:text-white hover:text-3xl" to='/login'>Add A Toy</Link></li>
+                    <li><Link className="hover:bg-red-500 hover:text-white hover:text-3xl" to='/addtoy'>Add A Toy</Link></li>
                     <li><Link className="hover:bg-red-500 hover:text-white hover:text-3xl" to='/login'>My Toys</Link></li>
                     <div className="flex items-center lg:ml-24">
                         <div className="tooltip tooltip-bottom" data-tip={user?.email}>
