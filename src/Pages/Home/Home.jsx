@@ -13,7 +13,11 @@ const Home = () => {
     useEffect(() => {
         fetch('http://localhost:5000/toys')
             .then(res => res.json())
-            .then(data => setToys(data))
+            .then(data => {
+                const filter = data.filter(rc => rc.subcategory === 'Racing Cars')
+                setToys(data)
+                setTempToy(filter);
+            })
     }, [])
 
     const rc = e => {
